@@ -1,0 +1,359 @@
+{
+  "metadatos": {
+    "institucion": "TECNOLÓGICO NACIONAL DE MÉXICO",
+    "campus": "INSTITUTO TECNOLÓGICO DE COLIMA",
+    "departamento": "Departamento de Sistemas y Computación",
+    "carrera": "Ingeniería Informática / Sistemas",
+    "materia": "Ingeniería de Datos (ATD-2602)",
+    "unidad": "Unidad 2: Limpieza y Preprocesamiento de Datos",
+    "docente": "Prof. Armando Román Gallardo Heredia",
+    "periodo": "Agosto – Diciembre 2026 (Semestre 2026-2)",
+    "ubicacion": "Villa de Álvarez, Colima, México",
+    "grupo": "Grupo 2 (LCNT) – Fintech & Transacciones Bancarias (ATM + SPEI)",
+    "equipo": [
+      {
+        "orden": 1,
+        "nombre": "Benavides Manzo Fernando",
+        "rol": "Ingeniero 1: Calidad, Nulos y Outliers",
+        "especialidad": "Perfilado cuantitativo, deduplicación de cajero, análisis MCAR/MAR, imputación con mediana robusta y Capping IQR."
+      },
+      {
+        "orden": 2,
+        "nombre": "López Ordorica Ángel Alejandro",
+        "rol": "Ingeniero 2: Transformación e Integración",
+        "especialidad": "Integración multifuente CSV/JSON, estandarización temporal ISO-8601, paridad cambiaria USD->MXN, cruce Core Bancario y Min-Max."
+      },
+      {
+        "orden": 3,
+        "nombre": "Velázquez Gallardo Andrea Tairi",
+        "rol": "Ingeniera 3: Validación, Resiliencia y Base de Datos",
+        "especialidad": "Modelado Pydantic v2, motor de segregación Zero-Crash, persistencia transaccional SQLite ACID y pruebas de estrés."
+      }
+    ]
+  },
+  "fase_1_diagnostico_inicial": {
+    "catalogo_cuentas": {
+      "filas": 50,
+      "columnas": 6,
+      "duplicados_exactos": 0,
+      "duplicados_pk": 0,
+      "completitud": {
+        "id_cuenta": {
+          "nulos": 0,
+          "cadenas_vacias": 0,
+          "porcentaje_nulos": 0.0,
+          "dtype": "str"
+        },
+        "titular": {
+          "nulos": 0,
+          "cadenas_vacias": 0,
+          "porcentaje_nulos": 0.0,
+          "dtype": "str"
+        },
+        "tipo_cuenta": {
+          "nulos": 0,
+          "cadenas_vacias": 0,
+          "porcentaje_nulos": 0.0,
+          "dtype": "str"
+        },
+        "limite_credito_mxn": {
+          "nulos": 0,
+          "cadenas_vacias": 0,
+          "porcentaje_nulos": 0.0,
+          "dtype": "float64"
+        },
+        "fecha_apertura": {
+          "nulos": 0,
+          "cadenas_vacias": 0,
+          "porcentaje_nulos": 0.0,
+          "dtype": "str"
+        },
+        "estado_cuenta": {
+          "nulos": 0,
+          "cadenas_vacias": 0,
+          "porcentaje_nulos": 0.0,
+          "dtype": "str"
+        }
+      }
+    },
+    "transacciones_atm": {
+      "filas": 620,
+      "columnas": 8,
+      "duplicados_exactos": 20,
+      "duplicados_pk": 20,
+      "completitud": {
+        "id_transaccion": {
+          "nulos": 0,
+          "cadenas_vacias": 0,
+          "porcentaje_nulos": 0.0,
+          "dtype": "str"
+        },
+        "fecha_hora": {
+          "nulos": 0,
+          "cadenas_vacias": 0,
+          "porcentaje_nulos": 0.0,
+          "dtype": "str"
+        },
+        "id_cuenta": {
+          "nulos": 0,
+          "cadenas_vacias": 0,
+          "porcentaje_nulos": 0.0,
+          "dtype": "str"
+        },
+        "tipo_operacion": {
+          "nulos": 0,
+          "cadenas_vacias": 0,
+          "porcentaje_nulos": 0.0,
+          "dtype": "str"
+        },
+        "monto_mxn": {
+          "nulos": 27,
+          "cadenas_vacias": 0,
+          "porcentaje_nulos": 4.35,
+          "dtype": "float64"
+        },
+        "id_cajero": {
+          "nulos": 44,
+          "cadenas_vacias": 0,
+          "porcentaje_nulos": 7.1,
+          "dtype": "str"
+        },
+        "resultado": {
+          "nulos": 0,
+          "cadenas_vacias": 0,
+          "porcentaje_nulos": 0.0,
+          "dtype": "str"
+        },
+        "comision_aplicada": {
+          "nulos": 0,
+          "cadenas_vacias": 0,
+          "porcentaje_nulos": 0.0,
+          "dtype": "float64"
+        }
+      },
+      "distribucion_operaciones": {
+        "RETIRO": 270,
+        "DEPOSITO": 133,
+        "PAGO_SERVICIOS": 116,
+        "CONSULTA_SALDO": 101
+      },
+      "consultas_saldo_cero": 101,
+      "nulos_por_operacion": {
+        "RETIRO": 16,
+        "DEPOSITO": 7,
+        "PAGO_SERVICIOS": 4
+      },
+      "monto_maximo_crudo": 3500000.0,
+      "id_transaccion_maximo": "ATM-TX-00416"
+    },
+    "transferencias_spei": {
+      "filas": 600,
+      "columnas": 10,
+      "duplicados_exactos": 0,
+      "duplicados_pk": 0,
+      "completitud": {
+        "transfer_id": {
+          "nulos": 0,
+          "cadenas_vacias": 0,
+          "porcentaje_nulos": 0.0,
+          "dtype": "str"
+        },
+        "timestamp": {
+          "nulos": 0,
+          "cadenas_vacias": 0,
+          "porcentaje_nulos": 0.0,
+          "dtype": "object"
+        },
+        "account_id": {
+          "nulos": 0,
+          "cadenas_vacias": 0,
+          "porcentaje_nulos": 0.0,
+          "dtype": "str"
+        },
+        "amount": {
+          "nulos": 0,
+          "cadenas_vacias": 0,
+          "porcentaje_nulos": 0.0,
+          "dtype": "float64"
+        },
+        "currency": {
+          "nulos": 0,
+          "cadenas_vacias": 0,
+          "porcentaje_nulos": 0.0,
+          "dtype": "str"
+        },
+        "beneficiary_clabe": {
+          "nulos": 0,
+          "cadenas_vacias": 0,
+          "porcentaje_nulos": 0.0,
+          "dtype": "str"
+        },
+        "notification_email": {
+          "nulos": 8,
+          "cadenas_vacias": 0,
+          "porcentaje_nulos": 1.33,
+          "dtype": "str"
+        },
+        "concept": {
+          "nulos": 0,
+          "cadenas_vacias": 0,
+          "porcentaje_nulos": 0.0,
+          "dtype": "str"
+        },
+        "status": {
+          "nulos": 0,
+          "cadenas_vacias": 0,
+          "porcentaje_nulos": 0.0,
+          "dtype": "str"
+        },
+        "platform": {
+          "nulos": 0,
+          "cadenas_vacias": 0,
+          "porcentaje_nulos": 0.0,
+          "dtype": "str"
+        }
+      },
+      "monedas": {
+        "MXN": 466,
+        "USD": 134
+      },
+      "clabes_corruptas_12345": 46,
+      "correos_malformados_arrobados": 19,
+      "correos_malformados_dominio": 11,
+      "correos_vacios": 8,
+      "correos_nulos": 8,
+      "timestamps_tipo_entero": 195,
+      "timestamps_tipo_string": 405
+    }
+  },
+  "fase_2_deduplicacion_e_imputacion": {
+    "duplicados_atm_eliminados": 20,
+    "reporte_imputacion": {
+      "clasificacion_faltantes": {
+        "atm_monto_mxn": {
+          "tipo": "MAR (Missing at Random)",
+          "justificacion": "La ausencia de monto_mxn depende directamente del tipo_operacion. Se concentra en RETIRO (16), DEPOSITO (7) y PAGO_SERVICIOS (4), y nunca ocurre en CONSULTA_SALDO (0 ausencias, 101 ceros explícitos).",
+          "cantidad_imputada": 27,
+          "metodo_aplicado": "Mediana segmentada por tipo_operacion (Retiro: $2,000, Depósito: $4,000, Pago Servicios: $4,000; Mediana Global Positiva: $3,000)",
+          "medianas_por_tipo": {
+            "DEPOSITO": 4000.0,
+            "PAGO_SERVICIOS": 4000.0,
+            "RETIRO": 2000.0
+          }
+        },
+        "atm_id_cajero": {
+          "tipo": "MCAR (Missing Completely at Random)",
+          "justificacion": "Pérdida esporádica de telemetría de hardware en el canal del cajero automático físico, independiente del monto o la cuenta.",
+          "cantidad_imputada": 42,
+          "valor_imputado": "ATM-NO-IDENTIFICADO"
+        },
+        "spei_notification_email": {
+          "tipo": "MCAR (Missing Completely at Random)",
+          "justificacion": "Omitido opcionalmente durante el registro de la transferencia en banca móvil / web.",
+          "cantidad_nulos_imputados": 8,
+          "cantidad_vacios_imputados": 8,
+          "total_imputados": 16,
+          "valor_imputado": "anonimo@banco.com.mx"
+        }
+      },
+      "justificacion_matematica_mediana_vs_media": {
+        "atm_media_cruda": 9527.4,
+        "atm_std_cruda": 146121.37,
+        "atm_mediana_cruda": 1500.0,
+        "coeficiente_variacion_atm": 1533.7,
+        "argumentacion": "La media aritmética se encuentra severamente contaminada por el sesgo hacia la derecha (right-skewness) causado por outliers astronómicos (como el retiro anómalo de $3,500,000.00 en ATM-TX-00416). Un solo valor atípico eleva artificialmente la media a $9,316.53 con una desviación estándar enorme de $143,637.60. En contraste, la mediana tiene un punto de ruptura (breakdown point) del 50%, lo que garantiza una estimación robusta e insensible a valores extremos que refleja fielmente la operación bancaria habitual ($2,000.00 - $4,000.00)."
+      }
+    }
+  },
+  "fase_3_outliers_winsorizing": {
+    "atm": {
+      "q1": 1000.0,
+      "q3": 7000.0,
+      "iqr": 6000.0,
+      "limite_inferior": 0.0,
+      "limite_superior": 16000.0,
+      "registros_capped": 1,
+      "ejemplo_extremo": "ATM-TX-00416 (Retiro original: $3,500,000.00 MXN -> Recortado a $16,000.00 MXN sin eliminar el registro)"
+    },
+    "spei": {
+      "q1": 12354.45,
+      "q3": 34624.82,
+      "iqr": 22270.37,
+      "limite_inferior": 0.0,
+      "limite_superior": 68030.38,
+      "registros_capped": 138,
+      "ejemplo_extremo": "SPEI-2026-00109 ($5,240,100.00 MXN) y transacciones en USD -> Recortadas a $68,030.38 MXN"
+    },
+    "politica_winsorizing": "Se aplicó Capping estadístico (Winsorizing de Tukey con k=1.5) en lugar de eliminación de registros. Esta decisión de ingeniería financiera previene la pérdida de transacciones bancarias legítimas y auditables, neutralizando al mismo tiempo la distorsión que causarían importes multimillonarios en modelos analíticos o de scoring."
+  },
+  "fase_4_integracion_y_cruce": {
+    "cuentas_catalogo_maestro": 50,
+    "total_transacciones_evaluadas": 1200,
+    "transacciones_con_cuenta_valida": 1139,
+    "cuentas_huerfanas_detectadas": {
+      "atm": 32,
+      "spei": 29,
+      "total": 61,
+      "ejemplos_atm": [
+        "CTA-8997",
+        "CTA-8207",
+        "CTA-9193",
+        "CTA-8155",
+        "CTA-9747"
+      ],
+      "ejemplos_spei": [
+        "CTA-7940",
+        "CTA-7586",
+        "CTA-7959",
+        "CTA-7400",
+        "CTA-7918"
+      ]
+    },
+    "politica_aislamiento": "Las 61 transacciones huérfanas NO son eliminadas silenciosamente en la fase de cruce. Se conservan intactas con la bandera es_cuenta_huerfana = True para que en la Fase 6 el motor de validación Pydantic las desvíe a la Zona de Cuarentena con trazabilidad y motivo explícito."
+  },
+  "fase_5_escalamiento_y_discretizacion": {
+    "distribucion_segmentos_global": {
+      "Bajo": 517,
+      "Medio": 421,
+      "Alto": 262
+    },
+    "distribucion_segmentos_limpias": {
+      "Bajo": 482,
+      "Medio": 369,
+      "Alto": 221
+    }
+  },
+  "fase_6_segregacion_cuarentena": {
+    "total_registros_evaluados": 1200,
+    "total_limpios_conformes": 1072,
+    "porcentaje_limpios": 89.33,
+    "total_en_cuarentena": 128,
+    "porcentaje_cuarentena": 10.67,
+    "desglose_por_fuente": {
+      "limpios": {
+        "ATM": 568,
+        "SPEI": 504
+      },
+      "cuarentena": {
+        "SPEI": 96,
+        "ATM": 32
+      }
+    },
+    "desglose_motivos_rechazo": {
+      "CUENTA_HUERFANA": 61,
+      "EMAIL_MALFORMADO": 30,
+      "CLABE_INVALIDA": 46
+    },
+    "politica_resiliencia": "Zero-Crash Policy cumplida al 100%: 0 excepciones no controladas; 128 registros corruptos aislados."
+  },
+  "fase_7_persistencia_sqlite": {
+    "estado_transaccion": "SUCCESS (COMMIT)",
+    "base_de_datos": "G:\\Mi unidad\\Ferssssni\\IINF\\Semestre\\2026\\2026-2\\INGENIERIA DE DATOS\\proyecto unidad 2\\entregable\\git\\database\\fintech_pipeline.db",
+    "filas_insertadas": {
+      "transacciones_limpias": 1072,
+      "cuarentena_errores": 128,
+      "catalogo_cuentas": 50
+    },
+    "atomicidad_acid": "Garantizada: Todas las tablas poblaron bajo el mismo bloque transaccional."
+  }
+}
