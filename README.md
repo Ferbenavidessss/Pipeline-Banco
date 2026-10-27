@@ -2,7 +2,7 @@
 > **Proyecto Integrador — Unidad 2: Limpieza y Preprocesamiento de Datos**  
 > **Asignatura:** Ingeniería de Datos (`ATD-2602`) | **Semestre:** Agosto – Diciembre 2026 (`2026-2`)  
 > **Institución:** Tecnológico Nacional de México (TecNM) — Instituto Tecnológico de Colima  
-> **Departamento:** Sistemas y Computación | **Carrera:** Ingeniería Informática  
+> **Departamento:** Sistemas y Computación | **Carrera:** Ingeniería Informática/Sistemas  
 > **Catedrático:** Prof. Armando Román Gallardo Heredia  
 > **Grupo Asignado:** **Grupo 2 (LCNT) — Fintech & Transacciones Bancarias (Cajeros ATM + SPEI / App)**  
 

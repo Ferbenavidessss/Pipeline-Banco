@@ -5,7 +5,7 @@
 
 ### DATOS INSTITUCIONALES Y DE LA MATERIA
 * **Institución:** Tecnológico Nacional de México (TecNM) – Instituto Tecnológico de Colima
-* **Departamento:** Departamento de Sistemas y Computación | **Carrera:** Ingeniería Informática
+* **Departamento:** Departamento de Sistemas y Computación | **Carrera:** Ingeniería Informática/Sistemas
 * **Materia:** Ingeniería de Datos (`ATD-2602`) | **Unidad 2:** Limpieza y Preprocesamiento de Datos
 * **Catedrático:** Prof. Armando Román Gallardo Heredia
 * **Periodo Escolar:** Agosto – Diciembre 2026 (`Semestre 2026-2`)

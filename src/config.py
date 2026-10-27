@@ -72,7 +72,7 @@ METADATOS_INSTITUCIONALES = {
     "institucion": "TECNOLÓGICO NACIONAL DE MÉXICO",
     "campus": "INSTITUTO TECNOLÓGICO DE COLIMA",
     "departamento": "Departamento de Sistemas y Computación",
-    "carrera": "Ingeniería Informática / Sistemas",
+    "carrera": "Ingeniería Informática/Sistemas",
     "materia": "Ingeniería de Datos (ATD-2602)",
     "unidad": "Unidad 2: Limpieza y Preprocesamiento de Datos",
     "docente": "Prof. Armando Román Gallardo Heredia",
