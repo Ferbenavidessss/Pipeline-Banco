@@ -54,3 +54,6 @@ tests/*.log
 *.db-journal
 *.db-wal
 *.db-shm
+
+# Helper scripts
+SUBIR_A_GITHUB.bat
